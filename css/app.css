@@ -1,0 +1,850 @@
+@font-face {
+    font-family: 'openS';
+    src: url(../fonts/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+:root{
+    --darkA: #111320;
+    --darkB: #171a2b;
+    --darkC: #1A1C28;
+    --pinkA: #fe44c6;
+    --pinkB: #ff83a0;
+    --blueA: #9da3af;
+    --Transparent: #0d0d0e4f;
+    --light: #efefef;
+}
+
+* , *::before , *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+body{
+    background-color: var(--darkA);
+    font-family: 'openS';
+    color: var(--light);
+}
+
+ul{
+    list-style: none;
+}
+
+header{
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container{
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.full{
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexBetween{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cPointer{
+    cursor: pointer;
+}
+
+.gap05{
+    gap: 0.5rem;
+}
+
+.header{
+    background-color: var(--darkA);
+    position: relative;
+    box-shadow: 1px 1px 17px rgba(0, 0, 0, 0.521);
+}
+
+.header-wrapper{
+    gap: 2rem;
+}
+
+.logo{
+    user-select: none;
+    gap: 0.5rem;
+}
+
+.logo svg{
+    color: var(--pinkA);
+    max-width: 2rem;
+    min-height: 2rem;
+}
+
+.logo div{
+    font-size: 1.6rem;
+}
+
+.headerList{
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    gap: 5rem;
+}
+
+.headerList li svg{
+    max-width: 1.7rem;
+    min-height: 1.7rem;
+}
+
+.searchBox{
+    padding: 0.3rem 0 0.3rem 1rem;
+    width: 40%;
+    gap: 0.5rem;
+    border-radius: 99rem;
+    background-color: var(--blueA);
+}
+
+.searchBox input{
+    width: 100%;
+    caret-color: var(--light);
+    color: var(--light);
+}
+
+.searchBox input::placeholder{
+    color: var(--light);
+}
+
+.hamburgerMenu{
+    display: none;
+}
+
+.menuMobile-Wrapper{
+    display: none;
+}
+
+.searchBoxMobile{
+    display: none;
+}
+
+.navMobile{
+    display: none;
+}
+
+.exitOverlay{
+    display: none;
+}
+
+/*///////////////////////////////////////////////////////// main */
+
+/* sidebar */
+
+.sideBar{
+    z-index: 990;
+    left: 0;
+    top: 0;
+    background: var(--darkB);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100vh;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.sideBarHolder{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sideBar:first-child{
+    margin-top: 2.5rem;
+}
+
+.sideBar li{
+    margin-bottom: 1rem;
+}
+
+.sideBar a{
+    padding: 0.5rem 2rem;
+    gap: 0.5rem;
+}
+
+.sideBar li svg {
+    max-width: 1.3rem;
+    min-height: 1.3rem;
+}
+.sideBar li span {
+    min-height: 1.3rem;
+}
+
+.subMenu{
+    transition: all 500ms ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: var(--blueA);
+    font-size: 0.9rem;
+    /* margin-bottom: 1rem; */
+}
+
+.subMenu li{
+    margin: 0;
+}
+
+.subMenu li a{
+    padding-left: 3rem;
+}
+
+.sideBarBottom{
+    z-index: 997;
+    bottom: 3rem;
+    width: 100%;
+    position: absolute;
+}
+
+.sideBarTop{
+    z-index: 996;
+    top: 3rem;
+    width: 100%;
+    position: absolute;
+}
+
+/* ///// */
+
+main{
+    transition: all 500ms;
+    margin-top: 6rem;
+}
+
+.popularPart , .tracksPart {
+    width: 80%;
+    margin-left: auto;
+    
+}
+
+
+.popularPart{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.tracksPart{
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.title{
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.swiper{
+    width: 100%;
+}
+.swiper-slide{
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    max-width: 13rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.swiper-slide img{
+    width: 100%;
+    display: block;
+}
+
+.swiper-button-prev{
+    color: var(--light);
+}
+.swiper-button-next{
+    color: var(--light);
+}
+
+.swiper-button-prev::after{
+    content: '';
+
+}
+.swiper-button-next::after{
+    content: '';
+}
+
+.slideMenu{
+    padding: 0.5rem;
+    gap: 0.3rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slideMenu div{
+    cursor: pointer;
+    backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--Transparent);
+    padding: 0.3rem;
+    border-radius: 99rem;
+    max-width: 2rem;
+    min-width: 2rem;
+}
+
+.slideMenu div svg{
+    width: 100%;
+    height: 100%;
+}
+
+.slideMenu div:hover{
+    border: 1px solid var(--light);
+}
+
+
+
+
+.trackPartHead a{
+    margin-bottom: 1rem;
+}
+
+.trackPartBody{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.trackPostCont{
+    border-radius: 1rem;
+    background: var(--darkC);
+    max-width: 12rem;
+    padding: 0.5rem;
+}
+
+.trackPostCont img {
+    border-radius: 1rem;
+    width: 100%;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.trackName{
+    margin-bottom: 0.5rem;
+    padding-left: 0.6rem;
+    font-size: 0.9rem;
+}
+.artistName , .albumName{
+    margin-bottom: 0.5rem;
+    padding-left: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--blueA);
+}
+
+
+footer{
+    background: var(--darkC);
+    margin-bottom: 0;
+}
+
+.footer{
+    padding: 1rem 0;
+    width: 80%;
+    margin-left: auto;
+    margin-top: 1rem;
+}
+
+/* search Html */
+
+.searchContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.searchPageHead{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.searchPageHead a{
+    border-radius: 99rem;
+    padding: 0.5rem;
+    border: 2px solid var(--blueA);
+    display: block;
+    font-size: 1rem;
+}
+
+.searchItem{
+    cursor: pointer;
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--darkB);
+    width: 100%;
+}
+
+.searchItem img{
+    border-radius: 1rem;
+    width: 15%;
+    height: 100%;
+    display: block;
+}
+
+.searchItem div{
+    margin-bottom: 0.5rem;
+}
+
+.searchedItemArtist,
+.searchedItemAlbum{
+    color: var(--blueA);
+    font-size: 2dvw;
+}
+
+
+.searchedItemTitle{
+    font-size: 2.5dvw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Break Points */
+
+
+@media only screen and (max-width: 1343px) {
+    .trackPostCont{
+        max-width: 10rem;
+    }
+}
+
+
+@media only screen and (max-width: 1242px) {
+    .swiper-slide{
+        max-width: 11rem;
+    }
+    .slideMenu div{
+        max-width: 1.7rem;
+        min-width: 1.7rem;
+    }
+}
+
+
+@media only screen and (max-width: 1142px) {
+    /*  header */
+    .headerList li svg{
+        max-width: 1.5rem;
+        min-height: 1.5rem;
+    }   
+    .headerList{
+        gap: 4rem;
+    }
+
+
+    /* //////////////////////////////////////////////// */
+
+    .sideBar{
+        font-size: 0.9rem;
+    }
+
+    .subMenu{
+        font-size: 0.8rem;
+    }
+
+    .trackPostCont{
+        max-width: 9rem;
+    }
+
+}
+
+@media only screen and (max-width: 1058px) {
+    /*  header */
+    .searchBox input::placeholder{
+        font-size: 0.8rem;
+    }
+    .headerList{
+        gap: 3.5rem;
+    }
+    .subMenu li a{
+        padding-left: 2rem;
+    }
+    /* /////////////////////////////////////////////// */
+
+    .sideBar a{
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+    }
+
+    .swiper-slide{
+        max-width: 9.5rem;
+    }
+
+    .trackPostCont{
+        max-width: 8rem;
+    }
+
+    .trackName{
+        font-size: 0.7rem;
+    }
+    .artistName , .albumName{
+        font-size: 0.6rem;
+        
+    }
+    
+}
+
+
+@media only screen and (max-width: 1002px) {
+    /*  header */
+    .headerList{
+        font-size: 0.9rem;
+    }
+    .searchBox input::placeholder{
+        font-size: 0.7rem;
+    }
+    .logo svg{
+        max-width: 1.5rem;
+        min-height: 1.5rem;
+    }
+    
+    .logo div{
+        font-size: 1.3rem;
+    }
+    /* ///////////////////////////////////////////// */
+
+    .trackName{
+        font-size: 0.7rem;
+    }
+    .artistName , .albumName{
+        font-size: 0.6rem;
+        
+    }
+
+    
+}
+
+@media only screen and (max-width: 906px) {
+    /*  header */
+    .headerList{
+        gap: 2.5rem;
+    }
+
+    .swiper-slide{
+        max-width: 8rem;
+    }
+}
+
+
+@media only screen and (max-width: 848px) {
+    /*  header */
+    .headerList{
+        gap: 1.5rem;
+    }
+    .header-wrapper{
+        gap: 0rem;
+    }
+    .searchBox input::placeholder{
+        font-size: 0.6rem;
+    }
+    /* ////////////////////////////////////////// */
+}
+
+@media only screen and (max-width: 768px) {
+    /*  header */
+
+    .header-wrapper{
+        justify-content: space-between;
+    }
+
+    .headerList{
+        display: none;
+    }
+    .hamburgerMenu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hamburgerMenu svg{
+        max-width: 1.8rem;
+        min-height: 1.8rem;
+    }
+    .logo{
+        padding: 0.7rem 0;
+    }
+
+    .logo svg{
+        max-width: 1.9rem;
+        min-height: 1.9rem;
+    }
+
+    .logo div{
+        font-size: 1.7rem;
+    }
+
+    .menuMobile-Wrapper{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .menuMobile-Wrapper svg{
+        max-width: 1.6rem;
+        min-height: 1.6rem;
+    }
+
+    .searchBoxMobile{
+        background: var(--darkA);
+        box-shadow: inset 1px 1px 17px rgba(0, 0, 0, 0.521);
+        padding: 0.9rem 1rem;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        bottom: 0;
+        z-index: -999;
+        transition: all 500ms;
+    }
+    .searchBoxMobile input {
+        width: 100%;
+        color: var(--light);
+        margin-left: 0.5rem;
+    }
+
+    .searchBoxMobile input:placeholder-shown {
+        color: var(--blueA);
+    }
+    .searchBoxMobile svg {
+        color: var(--blueA);
+        max-width: 1.2rem;
+        min-height: 1.2rem;
+    }
+
+    .navMobile{
+        transition: all 500ms;
+        width: 12rem;
+        height: 100vh;
+        top: 0;
+        left: -12rem;
+        position: fixed;
+        display: block;
+        background-color: var(--darkB);
+        z-index: 999;
+    }
+
+    .navMobile div{
+        padding-right: 0.5rem;
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .navMobile svg{
+        max-width: 1.5rem;
+        min-height: 1.5rem;
+    }
+
+    .navMobile ul{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .navMobile ul li {
+        padding-left: 2rem;
+    }
+
+    .exitOverlay {
+        top: 0;
+        left: 0;
+        z-index: 1;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .sideBar{
+        display: none;
+    }
+
+
+    /* /////////////////////// */
+
+    .popularPart , .tracksPart , .footer {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+    }
+    
+    .swiper-slide{
+        max-width: 8rem;
+    }
+
+    .slideMenu div{
+        max-width: 1.5rem;
+        min-width: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+    .swiper-slide{
+        max-width: 7rem;
+    }
+    .slideMenu div{
+        max-width: 1.3rem;
+        min-width: 1.3rem;
+    }
+
+    .trackPartBody{
+        flex-wrap: wrap;
+        /* justify-content: start; */
+    }
+
+    .trackPostCont{
+        max-width: 8rem;
+    }
+
+  
+
+
+}
+
+@media only screen and (max-width: 375px){
+    .trackPostCont{
+        max-width: 6rem;
+    }
+
+    .trackName{
+        font-size: 0.5rem;
+    }
+    .artistName , .albumName{
+        font-size: 0.4rem;
+        
+    }
+
+
+}
+
+
+
+
+
+
+/* ///////////////////////////////////// */
+
+.heightZero{
+    height: 0;
+}
+
+.heightAuto{
+    height: 9rem;
+}
+
+.posRel{
+    position: relative;
+}
+
+.heightFull{
+    height: 100%;
+}
+
+
+.elemHover{
+    transition: cubic-bezier(0.19, 1, 0.22, 1) all 700ms;
+}
+
+.elemHover:hover{
+    background: var(--pinkA);
+    color: var(--light);
+}
+
+.arrowIcon{
+    transition: all 500ms ease;
+    transform: rotate(270deg);
+}
+
+.hoverScale{
+    transition: all 700ms ease-in-out;
+}
+
+.hoverScale:hover{
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar{
+    width: 0.7rem;
+    background: var(--darkB);
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(37, 35, 44);
+}
+
+
+
