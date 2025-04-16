@@ -10,7 +10,7 @@ This project is a simple web music player built using JavaScript, HTML, and CSS,
 
 ## Screenshots:
 🎵 **Home Page**
-![Home](./public/ss/1.png)
+![Home](./ss/1.png)
 
 🎶 **Now Playing**
 ![Now Playing](./ss/2.png)
